@@ -1,0 +1,14 @@
+sudo: required
+language: node_js
+node_js:
+  - --lts
+cache: skip
+before_install:
+  - npm i -g yarn
+install:
+  - yarn install
+script:
+  - yarn build
+  - yarn lint
+  - yarn test
+  - yarn codecov
